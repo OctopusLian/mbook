@@ -2,11 +2,11 @@ package models
 
 import (
 	"errors"
+	"mbook/common"
+	"mbook/utils"
 	"regexp"
 	"strings"
 	"time"
-	" mbook/common"
-	" mbook/utils"
 
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"

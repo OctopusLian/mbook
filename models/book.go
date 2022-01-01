@@ -2,10 +2,10 @@ package models
 
 import (
 	"fmt"
+	"mbook/utils"
 	"strconv"
 	"strings"
 	"time"
-	" mbook/utils"
 
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"

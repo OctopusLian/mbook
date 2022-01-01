@@ -5,15 +5,29 @@ mbook是基于[BookStack](https://github.com/TruthHun/BookStack)进行重构和�
 
 ## 编译运行  
 
-1.将项目放在GOPATH/src下，使得目录结构最终如下面的样子  
+我已将代码架构改为go.mod形式，文件目录  
 ```
-$ ls $GOPATH/src/ mbook
-
-LICENSE			controllers		routers			uploads
-README.md		main.go			static			utils
-cache			mbook.sql		store			views
-common			mbook_useraction.sql	sysinit
-conf			models			tests
+$ mbook$ tree -L 1
+.
+├── common
+├── conf
+├── controllers
+├── doc
+├── go.mod
+├── go.sum
+├── LICENSE
+├── main.go
+├── mbook.sql
+├── mbook_useraction.sql
+├── models
+├── README.md
+├── res
+├── routers
+├── static
+├── sysinit
+├── tests
+├── utils
+└── views
 ```
 
 2.命令行到代码目录下  

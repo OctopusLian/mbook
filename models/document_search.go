@@ -2,10 +2,10 @@ package models
 
 import (
 	"fmt"
+	"mbook/utils/html2text"
 	"strconv"
 	"strings"
 	"time"
-	" mbook/utils/html2text"
 )
 
 // 文档搜索结果
