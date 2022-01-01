@@ -1,0 +1,7 @@
+<div class="page-left">
+    <ul class="menu">
+        <li {{if .SettingBasic}}class="active"{{end}}><a href="{{urlfor "SettingController.Index"}}" class="item"><i class="fa fa-sitemap" aria-hidden="true"></i> 基本信息</a> </li>
+        <li {{if .SettingBook}}class="active"{{end}}><a href="{{urlfor "BookController.Index"}}" class="item"><i class="fa fa-sitemap" aria-hidden="true"></i> 我的图书</a> </li>
+       
+    </ul>
+</div>

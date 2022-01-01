@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+{{template "widgets/head.html" .}}
+</head>
+<body>
+<div class="manual-reader manual-container">
+{{template "widgets/header.html" .}}
+    <div class="container manual-body cate-list">
+        <div class="row visible-xs" style="margin:15px 0px 30px 0px;">
+            <form method="get" action="{{urlfor "SearchController.Result"}}" class="search-form">
+                <div class="input-group input-group-lg">
+                    <input type="text" name="wd" placeholder="Search..." class="form-control">
+                    <span class="input-group-addon"><i class="fa fa-search"></i><span class="hidden-xs"> 搜索</span></span>
+                </div>
+            </form>
+        </div>
+        {{range $idx,$cate:=.Cates}}
+            {{if and (eq $cate.Pid 0) (gt $cate.Cnt 0)}}
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <!--这里不显示一级分类的计数，主要是为了避免误导用户，因为一本书籍，可能属于多个子分类，但是一级分类下的计数并不是所有子分类计数的和-->
+                            <a href="{{urlfor "ExploreController.Index"}}?cid={{$cate.Id}}" title="{{$cate.Title}}"><i class="fa fa-th"></i> {{$cate.Title}} <!-- （{{$cate.Cnt}}） --></a>
+                        </h3>
+                    </div>
+                    <div class="panel-body" style="padding-left: 0px;padding-right:0px;margin-left: -8px;margin-right: -8px;">
+                        {{range $idx1,$children:=$.Cates}}
+                            {{if and (gt $children.Cnt 0) (eq $cate.Id $children.Pid)}}
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                <div class="cate-item clearfix" data-placement="bottom" title="{{$children.Intro}}">
+                                    <div>
+                                        <a href="{{urlfor "ExploreController.Index"}}?cid={{$children.Id}}" title="{{$children.Title}}" class="pull-left"><img onerror="this.src='/static/images/cate.png'" src="{{showImg $children.Icon}}" alt="{{$children.Title}}"></a>
+                                        <a href="{{urlfor "ExploreController.Index"}}?cid={{$children.Id}}" title="{{$children.Title}}" >{{$children.Title}} （{{$children.Cnt}}）</a>
+                                        <div class="help-block">{{$children.Intro}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{end}}
+                        {{end}}
+                    </div>
+                </div>
+            {{end}}
+        {{end}}
+
+
+
+    </div>
+</div>
+{{template "widgets/footer.html" .}}
+<script>
+    $(function () {
+        $(".cate-item").tooltip();
+        $(".panel-recommend .panel-body a").tooltip();
+    })
+</script>
+</body>
+</html>

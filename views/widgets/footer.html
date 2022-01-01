@@ -1,0 +1,22 @@
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="clearfix mgt-15px text-center">
+                <div class="col-xs-12 mgt-15px  text-center">
+                    {{if $.ICP}}
+                    <div class="help-block"><a href="http://www.miitbeian.gov.cn/" target="_blank" rel="nofollow">{{$.ICP}}</a></div>
+                    {{end}}
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<script src="/static/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script>
+    $(function () {
+        $(".tooltips").tooltip();
+    })
+</script>
