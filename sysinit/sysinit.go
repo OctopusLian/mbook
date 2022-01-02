@@ -6,9 +6,9 @@ import (
 	"path/filepath"
 	"strings"
 
-	conf "ziyoubiancheng/mbook/common"
-	"ziyoubiancheng/mbook/models"
-	"ziyoubiancheng/mbook/utils"
+	conf "mbook/common"
+	"mbook/models"
+	"mbook/utils"
 
 	"github.com/astaxie/beego"
 )

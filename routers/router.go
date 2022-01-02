@@ -1,7 +1,7 @@
 package routers
 
 import (
-	"ziyoubiancheng/mbook/controllers"
+	"mbook/controllers"
 
 	"github.com/astaxie/beego"
 )

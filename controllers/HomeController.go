@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"ziyoubiancheng/mbook/models"
+	"mbook/models"
 
 	"github.com/astaxie/beego"
 )

@@ -1,15 +1,15 @@
 package controllers
 
 import (
+	"mbook/common"
+	"mbook/models"
+	"mbook/utils/graphics"
+	"mbook/utils/store"
 	"os"
 	"path/filepath"
 	"strconv"
 	"strings"
 	"time"
-	"ziyoubiancheng/mbook/common"
-	"ziyoubiancheng/mbook/models"
-	"ziyoubiancheng/mbook/utils/graphics"
-	"ziyoubiancheng/mbook/utils/store"
 
 	"github.com/astaxie/beego"
 )
