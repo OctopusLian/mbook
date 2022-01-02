@@ -1,14 +1,7 @@
-/*
- * @Description:
- * @Author: neozhang
- * @Date: 2022-01-01 10:56:14
- * @LastEditors: neozhang
- * @LastEditTime: 2022-01-01 10:58:35
- */
 package routers
 
 import (
-	"mbook/controllers"
+	"ziyoubiancheng/mbook/controllers"
 
 	"github.com/astaxie/beego"
 )

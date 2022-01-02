@@ -2,13 +2,13 @@ package controllers
 
 import (
 	"fmt"
-	"mbook/models"
-	"mbook/utils"
-	"mbook/utils/store"
 	"os"
 	"path/filepath"
 	"strings"
 	"time"
+	"ziyoubiancheng/mbook/models"
+	"ziyoubiancheng/mbook/utils"
+	"ziyoubiancheng/mbook/utils/store"
 
 	"github.com/astaxie/beego"
 )

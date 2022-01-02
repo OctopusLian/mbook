@@ -1,4 +1,4 @@
-module github.com/OctopusLian/mbook
+module mbook
 
 go 1.17
 

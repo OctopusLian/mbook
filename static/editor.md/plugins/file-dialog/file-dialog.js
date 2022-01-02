@@ -5,7 +5,7 @@
  * @author      minho
  * @version     0.1.0
  * @updateTime  2017-01-06
- * {@link       https:// SmartWiki}
+ * {@link       https://ziyoubiancheng/SmartWiki}
  * @license     MIT
  */
 

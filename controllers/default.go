@@ -2,7 +2,7 @@ package controllers
 
 import (
 	"fmt"
-	"mbook/models"
+	"ziyoubiancheng/mbook/models"
 
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"

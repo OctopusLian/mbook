@@ -1,20 +1,19 @@
 /*
  * @Description:
  * @Author: neozhang
- * @Date: 2022-01-01 10:56:14
+ * @Date: 2022-01-02 10:34:14
  * @LastEditors: neozhang
- * @LastEditTime: 2022-01-01 11:22:30
+ * @LastEditTime: 2022-01-02 10:36:00
  */
 package test
 
 import (
+	_ "mbook/routers"
 	"net/http"
 	"net/http/httptest"
 	"path/filepath"
 	"runtime"
 	"testing"
-
-	_ "mbook/routers"
 
 	"github.com/astaxie/beego"
 	. "github.com/smartystreets/goconvey/convey"

@@ -1,10 +1,3 @@
-/*
- * @Description:
- * @Author: neozhang
- * @Date: 2022-01-01 10:56:14
- * @LastEditors: neozhang
- * @LastEditTime: 2022-01-01 12:32:09
- */
 package models
 
 import (

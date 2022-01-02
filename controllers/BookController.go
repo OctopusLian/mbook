@@ -11,11 +11,11 @@ import (
 	"strings"
 	"time"
 
-	"mbook/common"
-	"mbook/models"
-	"mbook/utils"
-	"mbook/utils/graphics"
-	"mbook/utils/store"
+	"ziyoubiancheng/mbook/common"
+	"ziyoubiancheng/mbook/models"
+	"ziyoubiancheng/mbook/utils"
+	"ziyoubiancheng/mbook/utils/graphics"
+	"ziyoubiancheng/mbook/utils/store"
 
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/logs"
