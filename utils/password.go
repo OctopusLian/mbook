@@ -20,6 +20,7 @@ const (
 	saltLocalSecret    = "wWnN&^bnmIIIEbW**WL"
 )
 
+//密码使用哈希加密
 func PasswordHash(pass string) (string, error) {
 	saltSecret, err := saltSecret()
 	if err != nil {
@@ -43,6 +44,7 @@ func PasswordHash(pass string) (string, error) {
 
 }
 
+//密码验证
 func PasswordVerify(hashing string, pass string) (bool, error) {
 	data := trimSaltHash(hashing)
 

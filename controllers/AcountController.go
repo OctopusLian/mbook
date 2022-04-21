@@ -73,9 +73,9 @@ func (c *AccountController) Login() {
 	if c.Ctx.Input.IsPost() {
 		account := c.GetString("account")
 		password := c.GetString("password")
-		member, err := models.NewMember().Login(account, password)
-		fmt.Println(err)
+		member, err := models.NewMember().Login(account, password)  //登录用户名密码验证
 		if err != nil {
+			fmt.Println(err)
 			c.JsonResult(1, "登录失败", nil)
 		}
 		member.LastLoginTime = time.Now()
@@ -86,7 +86,7 @@ func (c *AccountController) Login() {
 		remember.Time = time.Now()
 		v, err := utils.Encode(remember)
 		if err == nil {
-			c.SetSecureCookie(common.AppKey(), "login", v, 24*3600*365)
+			c.SetSecureCookie(common.AppKey(), "login", v, 24*3600*365)  //设置过期时间
 		}
 		c.JsonResult(0, "ok")
 	}

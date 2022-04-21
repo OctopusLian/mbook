@@ -71,7 +71,7 @@ func (m *DocumentSearch) SearchDocument(keyword string, bookId int, page, size i
 	return
 }
 
-//返回文档
+//返回文档搜索结果
 func (m *DocumentSearch) GetDocsById(id []int, withoutCont ...bool) (docs []DocumentData, err error) {
 	if len(id) == 0 {
 		return

@@ -12,6 +12,7 @@ import (
 	"github.com/astaxie/beego/orm"
 )
 
+//用户
 type Member struct {
 	MemberId      int       `orm:"pk;auto" json:"member_id"`
 	Account       string    `orm:"size(30);unique" json:"account"`
@@ -33,11 +34,12 @@ func (m *Member) TableName() string {
 	return TNMembers()
 }
 
+//工厂模式
 func NewMember() *Member {
 	return &Member{}
 }
 
-// 添加用
+// 添加用户
 func (m *Member) Add() error {
 	if m.Email == "" {
 		return errors.New("请填写邮箱")
@@ -103,7 +105,6 @@ func (m *Member) Find(id int) (*Member, error) {
 func (m *Member) Login(account string, password string) (*Member, error) {
 	member := &Member{}
 	err := GetOrm("r").QueryTable(m.TableName()).Filter("account", account).Filter("status", 0).One(member)
-
 	if err != nil {
 		return member, errors.New("用户不存在")
 	}

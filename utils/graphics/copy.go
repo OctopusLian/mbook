@@ -1,3 +1,10 @@
+/*
+ * @Description:
+ * @Author: neozhang
+ * @Date: 2022-01-02 10:34:14
+ * @LastEditors: neozhang
+ * @LastEditTime: 2022-04-21 22:26:02
+ */
 package graphics
 
 import (
@@ -38,6 +45,7 @@ func ImageCopyFromFile(p string, x, y, w, h int) (src image.Image, err error) {
 func ImageResize(src image.Image, w, h int) image.Image {
 	return resize.Resize(uint(w), uint(h), src, resize.Lanczos3)
 }
+
 func ImageResizeSaveFile(src image.Image, width, height int, p string) error {
 	dst := resize.Resize(uint(width), uint(height), src, resize.Lanczos3)
 	return SaveImage(p, dst)

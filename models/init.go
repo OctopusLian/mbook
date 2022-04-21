@@ -72,6 +72,7 @@ func TNFans() string {
 // 	return "md_comments"
 // }
 
+//MySQL分表
 func TNComments(bookid int) string {
 	return fmt.Sprintf("md_comments_%04d", bookid%2)
 }

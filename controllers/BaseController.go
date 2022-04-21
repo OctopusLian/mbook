@@ -26,7 +26,11 @@ type CookieRemember struct {
 }
 
 //每个子类Controller公用方法调用前，都执行一下Prepare方法
+//相当于中间件
 func (c *BaseController) Prepare() {
+	//TODO:
+	//如果有缓存，则返回缓存内容
+
 	c.Member = models.NewMember() //初始化
 	c.EnableAnonymous = false
 	//从session中获取用户信息
@@ -121,4 +125,10 @@ func (c *BaseController) SetFollow() {
 		c.JsonResult(0, "已成功取消关注")
 	}
 	c.JsonResult(0, "已成功关注")
+}
+
+//渲染页面
+func (c *BaseController) Finish() {
+	//controllerName,actionName := c.GetControllerAndAction()
+
 }

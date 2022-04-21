@@ -1,3 +1,10 @@
+/*
+ * @Description:
+ * @Author: neozhang
+ * @Date: 2022-01-02 10:34:14
+ * @LastEditors: neozhang
+ * @LastEditTime: 2022-04-21 22:44:50
+ */
 package routers
 
 import (
@@ -25,10 +32,10 @@ func init() {
 	beego.Router("/search/result", &controllers.SearchController{}, "get:Result")
 
 	//login
-	beego.Router("/login", &controllers.AccountController{}, "*:Login")
-	beego.Router("/regist", &controllers.AccountController{}, "*:Regist")
-	beego.Router("/logout", &controllers.AccountController{}, "*:Logout")
-	beego.Router("/doregist", &controllers.AccountController{}, "post:DoRegist")
+	beego.Router("/login", &controllers.AccountController{}, "*:Login")          //用户登录
+	beego.Router("/regist", &controllers.AccountController{}, "*:Regist")        //用户注册(内部使用)
+	beego.Router("/logout", &controllers.AccountController{}, "*:Logout")        //用户登出
+	beego.Router("/doregist", &controllers.AccountController{}, "post:DoRegist") //用户注册
 
 	//编辑
 	beego.Router("/api/:key/edit/?:id", &controllers.DocumentController{}, "*:Edit")
@@ -56,9 +63,9 @@ func init() {
 	beego.Router("/book/score/:id", &controllers.BookController{}, "*:Score")                   //评分
 	beego.Router("/book/comment/:id", &controllers.BookController{}, "post:Comment")            //评论
 
-	//个人设置
-	beego.Router("/setting", &controllers.SettingController{}, "*:Index")
-	beego.Router("/setting/upload", &controllers.SettingController{}, "*:Upload")
+	//个人设置信息
+	beego.Router("/setting", &controllers.SettingController{}, "*:Index")         //查询
+	beego.Router("/setting/upload", &controllers.SettingController{}, "*:Upload") //更新个人设置
 
 	//管理后台
 	beego.Router("/manager/category", &controllers.ManagerController{}, "post,get:Category")

@@ -10,12 +10,6 @@ import (
 	"github.com/astaxie/beego"
 )
 
-/*
-*
-*	评论
-*
- */
-
 //评论表
 type Comments struct {
 	Id         int
@@ -74,8 +68,8 @@ func (m *Comments) BookComments(page, size, bookId int) (comments []BookComments
 	// _, err = GetOrm("w").Raw(sql, bookId).QueryRows(&comments)
 	// return
 
+	//优化
 	o := GetOrm("uar")
-
 	sql := `select book_id,uid,content,time_create from ` + TNComments(bookId) + ` where book_id=? limit %v offset %v`
 	sql = fmt.Sprintf(sql, size, (page-1)*size)
 	_, err = o.Raw(sql, bookId).QueryRows(&comments)
@@ -121,12 +115,6 @@ func (m *Comments) BookComments(page, size, bookId int) (comments []BookComments
 
 	return
 }
-
-/*
-*
-*	评分
-*
- */
 
 //评分表
 type Score struct {
